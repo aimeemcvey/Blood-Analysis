@@ -36,6 +36,11 @@ def new_feature():
     pass
 
 
+def name_function():
+    first_name = input("First name: ")
+    last_name = input("Last name: ")
+
+
 def interface():
     while True:
         print("Cholesterol Calculator")
