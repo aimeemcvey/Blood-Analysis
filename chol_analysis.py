@@ -18,6 +18,14 @@ def LDL_analysis(LDL_level):
         return "Normal"
 
 
+def fever_check(temp_list):
+    fever = False
+    for temperature in temp_list:
+        if temperature > 98.6:
+            fever = True
+    return fever
+
+
 def cholesterol_analysis():
     print("Cholesterol Analysis")
     data_input = input("Enter test results: ")
