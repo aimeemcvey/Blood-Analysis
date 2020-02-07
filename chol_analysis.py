@@ -49,17 +49,40 @@ def name_function():
     last_name = input("Last name: ")
 
 
+def input_patient():
+    last_name = input("Last name: ")
+    first_name = input("First name: ")
+    age = input("Age: ")
+    new_patient = {"last name": last_name,
+                   "first name": first_name,
+                   "age": age,
+                   # "test results": [0, 16, 23, 2.3]
+                   }
+    save_Json(new_patient)
+    return new_patient
+
+
+def save_Json(patient):
+    import json
+    filename = "patient_data.txt"
+    out_file = open(filename, 'w')
+    json.dump(patient, out_file)
+    out_file.close()
+
 def interface():
     while True:
         print("Cholesterol Calculator")
         print("Options:")
         print("  1 - Cholesterol Analysis")
+        print("  2 - Enter Patient Data")
         print("  9 - Quit")
         choice = input("Enter your option: ")
         if choice == '9':
             return
         elif choice == '1':
             cholesterol_analysis()
+        elif choice == '2':
+            input_patient()
 
 
 if __name__ == "__main__":
